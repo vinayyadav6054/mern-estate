@@ -1,22 +1,25 @@
-import {BrowserRouter, Routes,Route} from 'react-router-dom'
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUP from './pages/SignUp';
-import About from './pages/About';
-import Profile from './pages/Profile';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import SignIn from './pages/SignIn.jsx';
+import About from './pages/About.jsx';
+import Profile from './pages/Profile.jsx';
+import Header from './components/Header.jsx';
+import SignUp from './pages/SignUp.jsx';
 
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path= "/" element={<Home />}/>
-      <Route path= "/sign-in" element={<SignIn />}/>
-      <Route path= "/sign-up" element={<SignUP/>}/>
-      <Route path= "/about" element={<About/>}/>
-      <Route path= "/profile" element={<Profile/>}/>
-    </Routes>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/profile' element={<Profile />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
