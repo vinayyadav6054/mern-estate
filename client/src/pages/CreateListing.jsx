@@ -137,7 +137,7 @@ export default function CreateListing() {
         return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
-      const res = await fetch(`/api/listing/update/${params.listingId}`, {
+      const res = await fetch(`/api/listing/create/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -361,7 +361,7 @@ export default function CreateListing() {
             disabled={loading || uploading}
             className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
-            {loading ? 'Creating...' : 'Update listing'}
+            {loading ? 'Creating...' : 'Create listing'}
           </button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
